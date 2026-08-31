@@ -62,7 +62,7 @@ export default function Hero() {
               Meet Dr.
             </span>
             <span className="block bg-gradient-to-b from-ink to-ink/30 bg-clip-text text-transparent">
-              Ashfaq ul
+              Ashfaq Ul
             </span>
             <span className="block bg-gradient-to-b from-ink to-ink/30 bg-clip-text text-transparent">
               Hassan
