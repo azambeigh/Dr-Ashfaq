@@ -5,7 +5,12 @@ import { expertise } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 
 const icons = [Brain, Microscope, NotebookPen, GraduationCap];
-const tints = ["from-slate-tint to-mint-deep", "from-mint-deep to-slate-tint", "from-slate-tint to-mint-deep", "from-mint-deep to-slate-tint"];
+const images = [
+  "/images/expertise-anatomy.jpg",
+  "/images/expertise-histology.jpg",
+  "/images/expertise-curriculum.jpg",
+  "/images/expertise-mentorship.jpg",
+];
 
 export default function Expertise() {
   return (
@@ -29,8 +34,16 @@ export default function Expertise() {
             return (
               <Reveal key={item.title} delay={i * 0.07}>
                 <div className="group card-shadow relative overflow-hidden rounded-[1.75rem] border border-ink/8">
-                  <div className={`flex aspect-square items-center justify-center bg-gradient-to-br ${tints[i]}`}>
-                    <Icon size={40} className="text-slate-dark transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
+                  <div className="relative aspect-square overflow-hidden">
+                    <img
+                      src={images[i]}
+                      alt={item.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-darker/50 via-slate-darker/0 to-transparent" />
+                    <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-cream/90 text-slate-dark backdrop-blur">
+                      <Icon size={16} strokeWidth={1.75} />
+                    </span>
                   </div>
                   <div className="flex items-center justify-between gap-3 bg-slate-dark px-5 py-4">
                     <div>

@@ -105,16 +105,24 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="relative mx-auto aspect-[4/5] w-[70vw] max-w-[320px] sm:w-[42vw] lg:w-[26vw] lg:max-w-[360px]"
         >
-          {/* decorative rotated outlines, echoing the reference hero */}
-          <div className="pointer-events-none absolute inset-0 rotate-6 rounded-[2.5rem] border border-ink/10" />
-          <div className="pointer-events-none absolute inset-0 -rotate-3 rounded-[2.5rem] border border-slate-light/40" />
+          {/* decorative rotated outlines — spin continuously behind the static portrait */}
+          <motion.div
+            className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-ink/10"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+          />
+          <motion.div
+            className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-slate-light/40"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          />
 
           <div className="card-shadow grain relative h-full w-full overflow-hidden rounded-[2rem] border border-ink/8 bg-gradient-to-b from-slate-tint to-mint-deep">
             {doctor.image ? (
               <img
                 src={doctor.image}
                 alt={doctor.name}
-                className="h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full origin-[50%_68%] scale-[1.22] object-cover object-top"
               />
             ) : (
               <>

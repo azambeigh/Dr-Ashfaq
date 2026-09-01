@@ -33,9 +33,9 @@ export default function Navbar() {
             <Image
               src="/Logo1.png"
               alt="Dr. Ashfaq"
-              width={140}
-              height={36}
-              className="h-10 w-auto sm:h-12"
+              width={96}
+              height={94}
+              className="h-9 w-auto sm:h-11"
               priority
             />
           </a>
