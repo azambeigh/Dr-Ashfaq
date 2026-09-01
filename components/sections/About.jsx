@@ -4,10 +4,10 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="container-px py-24 sm:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.85fr_1fr] lg:gap-16">
+    <section id="about" className="bg-[#e2f0f0] container-px py-24 sm:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.65fr_1fr] lg:gap-16">
         <Reveal direction="right">
-          <div className="card-shadow grain relative aspect-[4/3.4] overflow-hidden rounded-[2rem] border border-ink/8 bg-slate-tint">
+          <div className="card-shadow grain relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-ink/8 bg-slate-tint">
             <svg viewBox="0 0 400 320" className="absolute inset-0 h-full w-full" fill="none">
               <rect x="0" y="0" width="400" height="320" fill="var(--color-slate-tint)" />
               <rect x="36" y="40" width="150" height="98" rx="16" fill="var(--color-cream)" />
@@ -34,10 +34,9 @@ export default function About() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">About</p>
+          <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">About</p>
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            An <span className="text-slate-dark">anatomist and educator</span> shaping the next
-            generation of doctors.
+            An <span className="text-slate-dark">Educator</span> At The Heart of Anatomy.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-ink-soft sm:text-lg">
             {doctor.summary}

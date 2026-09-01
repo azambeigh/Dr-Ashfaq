@@ -8,11 +8,14 @@ export default function WhyChoose() {
   return (
     <section className="container-px py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">Experience & Impact</p>
         <Reveal className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            Why Work With Me
+            Why <span className="text-slate-dark">Work </span> With Me
           </h2>
           <p className="max-w-sm text-sm text-ink-soft sm:text-base">
+            {/* <p className="max-w-sm text-sm leading-relaxed text-ink-soft sm:text-base"> */}
             Trusted medical education focused on clarity, evidence and long-term academic growth.
           </p>
         </Reveal>

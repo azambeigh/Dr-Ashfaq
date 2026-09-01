@@ -11,6 +11,9 @@ export default function Expertise() {
   return (
     <section id="expertise" className="container-px py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">
+            Specialties
+          </p>
         <Reveal className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
             Areas of Expertise

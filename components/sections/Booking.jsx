@@ -224,11 +224,11 @@ export default function Booking() {
     <section id="booking" className="container-px py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-12 text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
+          <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">
             Booking
           </p>
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            Book a Consultation
+            Book a<span className="text-slate-dark"> Consultation </span>
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-sm text-ink-soft sm:text-base">
             Choose the consultation that fits your needs, then share a few details below.

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -26,12 +27,17 @@ export default function Navbar() {
               ? "0 8px 30px -10px rgba(20,24,27,0.18)"
               : "0 0px 0px rgba(20,24,27,0)",
           }}
-          className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-ink/8 bg-cream/85 px-4 py-2.5 backdrop-blur-md md:px-5"
+          className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-ink/8 bg-cream/85 px-3.5 py-2.5 backdrop-blur-md md:px-4"
         >
           <a href="#top" className="flex items-center gap-2 pl-1">
-            <span className="font-display text-lg font-semibold tracking-tight text-ink">
-              Dr. Ashfaq
-            </span>
+            <Image
+              src="/Logo1.png"
+              alt="Dr. Ashfaq"
+              width={140}
+              height={36}
+              className="h-10 w-auto sm:h-12"
+              priority
+            />
           </a>
 
           <nav className="hidden items-center gap-1 md:flex">
@@ -39,7 +45,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
+                className="rounded-lg px-3.5 py-1.5 text-sm text-ink-focus transition-colors hover:bg-slate hover:text-white"
               >
                 {link.label}
               </a>
@@ -47,14 +53,14 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <ArrowButton href="#booking" variant="dark">
+            <ArrowButton href="#booking" variant="outline">
               Book Consultation
             </ArrowButton>
           </div>
 
           <button
             onClick={() => setOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-ink md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-2xl text-ink md:hidden"
             aria-label="Open menu"
           >
             <Menu size={20} />

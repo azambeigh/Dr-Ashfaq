@@ -19,13 +19,14 @@ export default function Publications() {
       <Reveal className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-slate-dark p-6 sm:p-10">
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream/60">
+            {/* <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream/60"> */}
+            <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-cream/60">
               Publications
             </p>
             <h2 className="font-display text-3xl font-semibold leading-tight text-cream sm:text-4xl">
               Selected Research
             </h2>
-            <p className="mt-3 max-w-md text-sm text-cream/70">
+            <p className="mt-3 max-w-xl text-sm text-cream/70">
               5 of 135 published works, spanning surgical anatomy, histopathology and clinical case
               studies.
             </p>

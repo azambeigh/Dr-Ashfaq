@@ -16,12 +16,12 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-mint-deep py-24 sm:py-28">
       <div className="container-px mx-auto max-w-6xl">
-        <Reveal className="mb-16 max-w-xl">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
+        <Reveal className="mb-16 max-w-5xl">
+          <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">
             Career Path
           </p>
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            16 years of clinical training, leadership and teaching.
+            <span className="text-slate-dark">16 years</span> of Clinical Training, Leadership and Teaching.
           </h2>
         </Reveal>
 

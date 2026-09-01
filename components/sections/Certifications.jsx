@@ -7,11 +7,12 @@ export default function Certifications() {
     <section className="container-px py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-12 max-w-xl">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
+          <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">
             Credentials
           </p>
+          
           <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
-            Certified across four countries.
+            Certified Across <span className="text-slate-dark"> Four </span> Countries.
           </h2>
         </Reveal>
 

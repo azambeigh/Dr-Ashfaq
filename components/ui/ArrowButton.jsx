@@ -27,7 +27,7 @@ export default function ArrowButton({
       onClick={onClick}
       type={href ? undefined : type}
       className={clsx(
-        "group inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300 ease-out",
+        "group inline-flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out",
         variants[variant],
         iconOnly && "p-3",
         className
