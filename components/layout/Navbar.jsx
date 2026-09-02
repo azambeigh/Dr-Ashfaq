@@ -55,9 +55,9 @@ export default function Navbar() {
               ? "0 8px 30px -10px rgba(20,24,27,0.18)"
               : "0 0px 0px rgba(20,24,27,0)",
           }}
-          className="mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-ink/8 bg-cream/85 px-3.5 py-2.5 backdrop-blur-md md:px-4"
+          className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-2xl border border-ink/8 bg-cream/85 px-3.5 py-2.5 backdrop-blur-md md:px-4"
         >
-          <a href="#top" className="flex items-center gap-2 w-12 pl-1">
+          <a href="#top" className="flex items-center gap-2 justify-self-start pl-1">
             <Image
               src="/Logo1.png"
               alt="Dr. Ashfaq"
@@ -94,19 +94,21 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="hidden md:block">
-            <ArrowButton href="#footer" variant="outline">
-              Get in Touch
-            </ArrowButton>
-          </div>
+          <div className="flex items-center justify-self-end gap-2">
+            <div className="hidden md:block">
+              <ArrowButton href="#footer" variant="outline">
+                Get in Touch
+              </ArrowButton>
+            </div>
 
-          <button
-            onClick={() => setOpen(true)}
-            className="flex h-10 w-10 items-center justify-center rounded-2xl text-ink md:hidden"
-            aria-label="Open menu"
-          >
-            <Menu size={20} />
-          </button>
+            <button
+              onClick={() => setOpen(true)}
+              className="flex h-10 w-10 items-center justify-center rounded-2xl text-ink md:hidden"
+              aria-label="Open menu"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
         </motion.div>
       </div>
 

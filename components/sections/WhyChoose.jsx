@@ -6,7 +6,7 @@ const icons = [GraduationCap, ShieldCheck, BookOpen, HeartHandshake];
 
 export default function WhyChoose() {
   return (
-    <section className="container-px py-20 sm:py-24">
+    <section id="impact" className="container-px py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">Experience & Impact</p>
         <Reveal className="mb-12 sm:mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

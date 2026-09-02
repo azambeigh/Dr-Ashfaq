@@ -1,7 +1,7 @@
 "use client";
 
-import { Mail, Phone } from "lucide-react";
-import { doctor } from "@/lib/data";
+import { Mail } from "lucide-react";
+import { doctor, quickLinks } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 import ArrowButton from "@/components/ui/ArrowButton";
 
@@ -108,24 +108,22 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative overflow-hidden border-t border-line bg-slate-dark">
+    <footer id="footer" className="relative z-0 -mt-28 overflow-hidden border-t border-line bg-slate-dark sm:-mt-36 lg:-mt-44">
       {/* decorative corner mark — top right */}
       <StethoscopeMark className="pointer-events-none absolute -right-20 top-60 h-40 w-40 opacity-[0.12] sm:h-56 sm:w-56" />
 
-      <div className="container-px relative pt-20 pb-12">
+      <div className="container-px relative pt-44 pb-12 sm:pt-52 lg:pt-60">
         <Reveal>
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 sm:flex-row sm:items-start sm:justify-between">
+          <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 sm:flex-row sm:items-start sm:justify-between">
             {/* left: heading + CTA */}
-            <div className="max-w-md">
-              <h2 className="font-display text-4xl font-bold leading-[1.05] text-cream sm:text-5xl">
-                Let&apos;s have
-                <br />
-                a conversation
+            <div className="w-[70%] max-w-xl">
+              <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-cream sm:text-[40px]">
+                Dr. Ashfaq ul Hassan
               </h2>
 
-              <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
-                Want to talk medical education, research collaboration, or a
-                consultation? Reach out — I&apos;d love to hear from you.
+              <p className="mt-3 max-w-md text-sm sm:text-base leading-relaxed text-cream/70">
+                Professor & Head of Department, SKIMS
+                Medical Professional • Medical Educator • Academic Mentor
               </p>
 
               <div className="mt-7">
@@ -136,26 +134,21 @@ export default function Footer() {
             </div>
 
             {/* right: contact + socials */}
-            <div className="sm:pt-1">
+            <div className=" w-[30%] sm:pt-1">
               <p className="font-semibold tracking-[0.18em] text-cream">
-                Get in Touch
+                Quick Links
               </p>
-              <a
-                href={`mailto:${doctor.email}`}
-                className="mt-4 flex items-center gap-2 text-base font-medium text-cream/85 hover:text-cream"
-              >
-                <Mail size={15} className="text-cream/85" />
-                {doctor.email}
-              </a>
-              {doctor.phone && (
-                <a
-                  href={`tel:${doctor.phone}`}
-                  className="mt-3 flex items-center gap-2 text-base text-cream/85 hover:text-cream"
-                >
-                  <Phone size={14} className="text-cream/85" />
-                  {doctor.phone}
-                </a>
-              )}
+              <div className="mt-4 grid grid-cols-2 gap-x-10 gap-y-3">
+                {quickLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-base text-cream/85 hover:text-cream"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
 
               <p className="mt-8 font-semibold tracking-[0.18em] text-cream">
                 Social Links
@@ -177,11 +170,11 @@ export default function Footer() {
             </div>
           </div>
         </Reveal>
-        
+
 
         <div className="relative mx-auto mt-16 w-full max-w-6xl pt-5">
-          
-        <svg
+
+          <svg
             className="pointer-events-none absolute inset-x-0 top-[-110%] hidden w-full opacity-[0.12] sm:block"
             height="80"
             viewBox="0 0 1000 80"
@@ -196,7 +189,7 @@ export default function Footer() {
               strokeLinejoin="round"
             />
           </svg>
-          
+
           <p className="pt-4 text-xs text-cream/80">
             Made with care, from Srinagar, Kashmir. © {new Date().getFullYear()}{" "}
             {doctor.name}. All rights reserved.
