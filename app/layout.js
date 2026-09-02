@@ -2,8 +2,8 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import SectionDock from "@/components/layout/SectionDock";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import ScrolltoTop from "@/components/ui/ScrolltoTop";
 
 const displayFont = Bricolage_Grotesque({
   variable: "--font-display",
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
-          <SectionDock />
+          <ScrolltoTop />
         </SmoothScroll>
       </body>
     </html>

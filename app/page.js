@@ -6,20 +6,18 @@ import Experience from "@/components/sections/Experience";
 import Expertise from "@/components/sections/Expertise";
 import Publications from "@/components/sections/Publications";
 import Certifications from "@/components/sections/Certifications";
-import Booking from "@/components/sections/Booking";
 
 export default function Home() {
   return (
-    <main>
+    <main>   
       <Hero />
-      {/* <TrustedBy /> */}
       <About />
+      <TrustedBy />
       <WhyChoose />
-      <Experience />
       <Expertise />
+      <Experience />
       <Publications />
       <Certifications />
-      <Booking />
     </main>
   );
 }

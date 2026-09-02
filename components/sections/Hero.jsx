@@ -89,10 +89,10 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="mt-2 flex flex-wrap gap-3"
           >
-            <ArrowButton href="#booking" variant="dark">
+            <ArrowButton href="#footer" variant="dark">
               Book a Consultation
             </ArrowButton>
-            <ArrowButton href="#about" variant="outline">
+            <ArrowButton href="#experience" variant="outline">
               More About Me
             </ArrowButton>
           </motion.div>

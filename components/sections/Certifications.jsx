@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function Certifications() {
   return (
-    <section className="container-px py-24 sm:py-28">
+    <section id="Credentials" className="container-px py-24 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-12 max-w-xl">
           <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">

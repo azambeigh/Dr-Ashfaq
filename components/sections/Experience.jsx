@@ -14,22 +14,22 @@ export default function Experience() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="experience" className="bg-mint-deep py-24 sm:py-28">
+    <section id="experience" className="bg-mint-flat py-20 sm:py-24">
       <div className="container-px mx-auto max-w-6xl">
-        <Reveal className="mb-16 max-w-5xl">
-          <p className="mb-3 text-medium font-bold uppercase tracking-[0.18em] text-ink-faint">
+        <Reveal className="mb-12 sm:mb-16 max-w-5xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
             Career Path
           </p>
-          <h2 className="font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
             <span className="text-slate-dark">16 years</span> of Clinical Training, Leadership and Teaching.
           </h2>
         </Reveal>
 
         <div ref={containerRef} className="relative pl-8 sm:pl-12">
-          <div className="absolute left-[5px] top-2 bottom-2 w-px bg-ink/10 sm:left-[9px]" />
+          <div className="absolute left-1.25 top-2 bottom-2 w-px bg-ink/10 sm:left-2.25" />
           <motion.div
             style={{ height: lineHeight }}
-            className="absolute left-[5px] top-2 w-px origin-top bg-slate-dark sm:left-[9px]"
+            className="absolute left-1.25 top-2 w-px origin-top bg-slate-dark sm:left-2.25"
           />
 
           <div className="flex flex-col gap-10 sm:gap-12">
