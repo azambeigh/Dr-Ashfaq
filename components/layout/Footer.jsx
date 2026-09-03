@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { doctor, quickLinks } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 import ArrowButton from "@/components/ui/ArrowButton";
@@ -104,6 +104,20 @@ function StethoscopeMark(props) {
 const socials = [
   { icon: Mail, href: `mailto:${doctor.email}`, label: "Email" },
   { icon: LinkedinIcon, href: doctor.linkedin, label: "LinkedIn" },
+  ...(doctor.phone
+    ? [{ icon: Phone, href: `tel:${doctor.phone}`, label: "Phone" }]
+    : []),
+  ...(doctor.location
+    ? [
+        {
+          icon: MapPin,
+          href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            doctor.location
+          )}`,
+          label: "Location",
+        },
+      ]
+    : []),
 ];
 
 export default function Footer() {
@@ -134,7 +148,7 @@ export default function Footer() {
             </div>
 
             {/* right: contact + socials */}
-            <div className=" w-[30%] sm:pt-1">
+            <div className="w-[100%] sm:w-[30%] sm:pt-1">
               <p className="font-semibold tracking-[0.18em] text-cream">
                 Quick Links
               </p>
@@ -153,13 +167,13 @@ export default function Footer() {
               <p className="mt-8 font-semibold tracking-[0.18em] text-cream">
                 Social Links
               </p>
-              <div className="mt-3 flex gap-2">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {socials.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
+                    target={social.label === "Phone" ? undefined : "_blank"}
+                    rel={social.label === "Phone" ? undefined : "noreferrer"}
                     aria-label={social.label}
                     className="flex h-9 w-9 items-center justify-center rounded-lg border border-cream/60 text-cream/85 transition-colors hover:border-cream hover:text-cream"
                   >
@@ -172,10 +186,10 @@ export default function Footer() {
         </Reveal>
 
 
-        <div className="relative mx-auto mt-16 w-full max-w-6xl pt-5">
+        <div className="relative mx-auto mt-20 sm:mt-16 w-full max-w-6xl pt-5">
 
           <svg
-            className="pointer-events-none absolute inset-x-0 top-[-110%] hidden w-full opacity-[0.12] sm:block"
+            className="pointer-events-none absolute inset-x-0 top-[-110%] w-full opacity-[0.12] block"
             height="80"
             viewBox="0 0 1000 80"
             fill="none"

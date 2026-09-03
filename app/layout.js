@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import ScrolltoTop from "@/components/ui/ScrolltoTop";
+import { BookingModalProvider } from "@/components/ui/BookingModalProvider";
 
 const displayFont = Bricolage_Grotesque({
   variable: "--font-display",
@@ -26,12 +27,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${displayFont.variable} ${sansFont.variable}`}>
       <body className="min-h-screen bg-mint text-ink antialiased">
-        <SmoothScroll>
-          <Navbar />
-          {children}
-          <Footer />
-          <ScrolltoTop />
-        </SmoothScroll>
+        <BookingModalProvider>
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+            <ScrolltoTop />
+          </SmoothScroll>
+        </BookingModalProvider>
       </body>
     </html>
   );

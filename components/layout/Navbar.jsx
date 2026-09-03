@@ -7,11 +7,13 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { navLinks, doctor } from "@/lib/data";
 import ArrowButton from "@/components/ui/ArrowButton";
+import { useBookingModal } from "@/components/ui/BookingModalProvider";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
+  const { open: openBooking } = useBookingModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -55,9 +57,11 @@ export default function Navbar() {
               ? "0 8px 30px -10px rgba(20,24,27,0.18)"
               : "0 0px 0px rgba(20,24,27,0)",
           }}
-          className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-2xl border border-ink/8 bg-cream/85 px-3.5 py-2.5 backdrop-blur-md md:px-4"
+         className="relative mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-ink/8 bg-cream/85 px-3.5 py-2.5 backdrop-blur-md md:px-4"
         >
-          <a href="#top" className="flex items-center gap-2 justify-self-start pl-1">
+
+            <a href="#top" className="flex items-center gap-2 pl-1">
+
             <Image
               src="/Logo1.png"
               alt="Dr. Ashfaq"
@@ -96,7 +100,7 @@ export default function Navbar() {
 
           <div className="flex items-center justify-self-end gap-2">
             <div className="hidden md:block">
-              <ArrowButton href="#footer" variant="outline">
+              <ArrowButton onClick={openBooking} variant="dark">
                 Get in Touch
               </ArrowButton>
             </div>
@@ -152,8 +156,15 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="mt-6">
-                <ArrowButton href="#booking" variant="dark" onClick={() => setOpen(false)} className="w-full justify-between">
-                  Book Consultation
+                <ArrowButton
+                  onClick={() => {
+                    setOpen(false);
+                    openBooking();
+                  }}
+                  variant="dark"
+                  className="w-full justify-between"
+                >
+                  Get in Touch
                 </ArrowButton>
               </div>
             </motion.div>

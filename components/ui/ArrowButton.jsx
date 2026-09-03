@@ -10,6 +10,16 @@ const variants = {
   ghost: "bg-white/10 text-cream border border-cream/25 hover:bg-white/20",
 };
 
+// background for the little arrow circle — needs to contrast against
+// each button's own background, so "light" gets a dark-tinted circle
+// instead of the default white-tinted one used on dark buttons.
+const arrowBg = {
+  dark: "bg-white/15",
+  light: "bg-ink/10",
+  outline: "bg-ink/10",
+  ghost: "bg-white/15",
+};
+
 export default function ArrowButton({
   children,
   href,
@@ -27,7 +37,7 @@ export default function ArrowButton({
       onClick={onClick}
       type={href ? undefined : type}
       className={clsx(
-        "group inline-flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out",
+        "group cursor-pointer inline-flex items-center gap-3 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out",
         variants[variant],
         iconOnly && "p-3",
         className
@@ -37,7 +47,7 @@ export default function ArrowButton({
       <span
         className={clsx(
           "inline-flex shrink-0 items-center justify-center rounded-full transition-transform duration-300 ease-out group-hover:rotate-45",
-          iconOnly ? "h-full w-full" : "h-6 w-6 bg-white/15"
+          iconOnly ? "h-full w-full" : clsx("h-6 w-6", arrowBg[variant])
         )}
       >
         <ArrowUpRight size={14} strokeWidth={2.25} />
