@@ -69,18 +69,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-lg text-xl font-normal leading-snug text-slate-dark/80 sm:text-2xl"
+            className="max-w-lg font-normal leading-snug text-slate-dark/80 text-xl"
           >
             {doctor.tagline}
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-md text-base leading-relaxed text-ink-soft"
-          >
-            {doctor.credentials}
           </motion.p>
 
           <motion.div
