@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-mint pb-16 pt-32 md:pt-36"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-mint pb-16 pt-32 md:pt-36"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
@@ -40,27 +40,14 @@ export default function Hero() {
         }}
       />
 
-      <div className="container-px relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+      <div className="container-px relative mx-auto grid w-full max-w-312 grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
         {/* Left column — copy */}
         <div className="flex flex-col items-start gap-6">
-          {/* <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint"
-          >
-            <MapPin size={13} className="text-slate-dark" />
-            {doctor.title} · {doctor.org}
-          </motion.p>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-faint">
-            {doctor.title} · {doctor.org }
-          </p> */}
-
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="font-display text-[11vw] font-bold leading-[1.02] tracking-wide text-ink sm:text-[7.5vw] lg:text-[4.6vw]"
+            className="bg-linear-to-r from-ink to-slate bg-clip-text font-display text-[11vw] font-semibold leading-[1.02] tracking-wide text-transparent sm:text-[7.5vw] lg:text-[4.6vw]"
           >
             Meet {doctor.name}
           </motion.h1>
@@ -94,7 +81,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.92, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="relative mx-auto aspect-[4/5] w-[70vw] max-w-[320px] sm:w-[42vw] lg:w-[26vw] lg:max-w-[360px]"
+          className="relative mx-auto aspect-4/5 w-[70vw] max-w-[320px] sm:w-[42vw] lg:w-[26vw] lg:max-w-90"
         >
           {/* decorative rotated outlines — spin continuously behind the static portrait */}
           <motion.div
@@ -108,7 +95,7 @@ export default function Hero() {
             transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
           />
 
-          <div className="card-shadow grain relative h-full w-full overflow-hidden rounded-[2rem] border border-ink/8 bg-gradient-to-b from-slate-tint to-mint-deep">
+          <div className="card-shadow grain relative h-full w-full overflow-hidden rounded-4xl border border-ink/8 bg-linear-to-b from-slate-tint to-mint-deep">
             {doctor.image ? (
               <img
                 src={doctor.image}
@@ -153,8 +140,6 @@ export default function Hero() {
               <span className="whitespace-nowrap">{label}</span>
             </motion.div>
           ))}
-
-          <span className="absolute -bottom-2 right-6 h-3 w-3 rounded-full bg-slate-dark" />
         </motion.div>
       </div>
     </section>

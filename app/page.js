@@ -7,13 +7,15 @@ import Expertise from "@/components/sections/Expertise";
 import Publications from "@/components/sections/Publications";
 import Certifications from "@/components/sections/Certifications";
 import Booking from "@/components/sections/CtaSection";
+import Heroo from "@/components/sections/Heroo";
 
 
 export default function Home() {
   return (
     <main>   
-      <Hero />
+      <Heroo />
       <About />
+      <Hero />
       <TrustedBy />
       <WhyChoose />
       <Expertise />

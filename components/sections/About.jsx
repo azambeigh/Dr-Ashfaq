@@ -9,7 +9,7 @@ export default function About() {
         <Reveal direction="right">
           <div className="card-shadow grain relative aspect-4/4.5 overflow-hidden rounded-2xl border border-ink/8 bg-slate-tint">
             <img
-              src="/images/dr-ashfaq-about.jpg"
+              src="/images/Aboutimg.webp"
               alt="Dr. Ashfaq ul Hassan speaking at a lecture"
               className="h-full w-full object-cover"
             />
