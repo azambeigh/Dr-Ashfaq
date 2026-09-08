@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { doctor, quickLinks } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 import ArrowButton from "@/components/ui/ArrowButton";
@@ -13,8 +13,22 @@ function LinkedinIcon({ size = 15, ...props }) {
   );
 }
 
-// Detailed, illustrative stethoscope mark for the footer corner —
-// gradient-shaded tubing and chest piece rather than a flat line icon.
+function FacebookIcon({ size = 15, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.87.24-1.46 1.49-1.46H16.5V4.36C16.24 4.32 15.36 4.25 14.33 4.25c-2.15 0-3.62 1.31-3.62 3.72V10.5H8.19v3h2.52V21h2.79z" />
+    </svg>
+  );
+}
+
+function YoutubeIcon({ size = 15, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-2C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.95 1.96C5.12 19.5 12 19.5 12 19.5s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27z" />
+    </svg>
+  );
+}
+
 function StethoscopeMark(props) {
   return (
     <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -102,11 +116,14 @@ function StethoscopeMark(props) {
 }
 
 const socials = [
-  { icon: Mail, href: `mailto:${doctor.email}`, label: "Email" },
   { icon: LinkedinIcon, href: doctor.linkedin, label: "LinkedIn" },
-  ...(doctor.phone
-    ? [{ icon: Phone, href: `tel:${doctor.phone}`, label: "Phone" }]
+  ...(doctor.facebook
+    ? [{ icon: FacebookIcon, href: doctor.facebook, label: "Facebook" }]
     : []),
+  ...(doctor.youtube
+    ? [{ icon: YoutubeIcon, href: doctor.youtube, label: "YouTube" }]
+    : []),
+  { icon: Mail, href: `mailto:${doctor.email}`, label: "Email" },
   ...(doctor.location
     ? [
         {
@@ -123,13 +140,11 @@ const socials = [
 export default function Footer() {
   return (
     <footer id="footer" className="relative z-0 -mt-28 overflow-hidden border-t border-line bg-slate-dark sm:-mt-36 lg:-mt-44">
-      {/* decorative corner mark — top right */}
       <StethoscopeMark className="pointer-events-none absolute -right-20 top-60 h-40 w-40 opacity-[0.12] sm:h-56 sm:w-56" />
 
       <div className="container-px relative pt-44 pb-12 sm:pt-52 lg:pt-60">
         <Reveal>
           <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 sm:flex-row sm:items-start sm:justify-between">
-            {/* left: heading + CTA */}
             <div className="w-[70%] max-w-xl">
               <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-cream sm:text-[40px]">
                 Dr. Ashfaq ul Hassan
@@ -137,7 +152,7 @@ export default function Footer() {
 
               <p className="mt-3 max-w-md text-sm sm:text-base leading-relaxed text-cream/70">
                 Professor & Head of Department, SKIMS
-                Medical Professional • Medical Educator • Academic Mentor
+                Medical Professional . Medical Educator . Academic Mentor
               </p>
 
               <div className="mt-7">
@@ -147,8 +162,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* right: contact + socials */}
-            <div className="w-[100%] sm:w-[30%] sm:pt-1">
+            <div className="w-full sm:w-[30%] sm:pt-1">
               <p className="font-semibold tracking-[0.18em] text-cream">
                 Quick Links
               </p>
@@ -172,8 +186,8 @@ export default function Footer() {
                   <a
                     key={social.label}
                     href={social.href}
-                    target={social.label === "Phone" ? undefined : "_blank"}
-                    rel={social.label === "Phone" ? undefined : "noreferrer"}
+                    target="_blank"
+                    rel="noreferrer"
                     aria-label={social.label}
                     className="flex h-9 w-9 items-center justify-center rounded-lg border border-cream/60 text-cream/85 transition-colors hover:border-cream hover:text-cream"
                   >
@@ -185,9 +199,7 @@ export default function Footer() {
           </div>
         </Reveal>
 
-
         <div className="relative mx-auto mt-20 sm:mt-16 w-full max-w-6xl pt-5">
-
           <svg
             className="pointer-events-none absolute inset-x-0 top-[-110%] w-full opacity-[0.12] block"
             height="80"
@@ -205,7 +217,7 @@ export default function Footer() {
           </svg>
 
           <p className="pt-4 text-xs text-cream/80">
-            Made with care, from Srinagar, Kashmir. © {new Date().getFullYear()}{" "}
+            Made with care, from Srinagar, Kashmir. (c) {new Date().getFullYear()}{" "}
             {doctor.name}. All rights reserved.
           </p>
         </div>

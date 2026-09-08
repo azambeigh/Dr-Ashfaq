@@ -1,147 +1,151 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Stethoscope, GraduationCap, BookMarked, MapPin } from "lucide-react";
-import { doctor, badges } from "@/lib/data";
 import ArrowButton from "@/components/ui/ArrowButton";
-
-const floatBadges = [
-  {
-    icon: GraduationCap,
-    label: badges[0],
-    className: "-left-6 top-6 sm:-left-10 sm:top-8",
-    delay: 0,
-  },
-  {
-    icon: Sparkles,
-    label: badges[1],
-    className: "-right-4 -top-3 sm:-right-9 sm:-top-4",
-    delay: 0.35,
-  },
-  {
-    icon: BookMarked,
-    label: badges[3],
-    className: "-left-5 -bottom-5 sm:-left-8 sm:-bottom-7",
-    delay: 0.7,
-  },
-];
-
-export default function Hero() {
-  return (
-    <section
-      id="top"
-      className="relative flex min-h-svh flex-col justify-center overflow-hidden bg-mint pb-16 pt-32 md:pt-36"
-    >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.35]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, rgba(20,24,27,0.05) 0px, rgba(20,24,27,0.05) 1px, transparent 1px, transparent 64px)",
-        }}
-      />
-
-      <div className="container-px relative mx-auto grid w-full max-w-312 grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
-        {/* Left column — copy */}
-        <div className="flex flex-col items-start gap-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-            className="bg-linear-to-r from-ink to-slate bg-clip-text font-display text-[11vw] font-semibold leading-[1.02] tracking-wide text-transparent sm:text-[7.5vw] lg:text-[4.6vw]"
-          >
-            Meet {doctor.name}
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-lg font-normal leading-snug text-slate-dark/80 text-xl"
-          >
-            {doctor.tagline}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-2 flex flex-wrap gap-3"
-          >
-            <ArrowButton href="#footer" variant="dark">
-              Book a Consultation
-            </ArrowButton>
-            <ArrowButton href="#experience" variant="outline">
-              More About Me
-            </ArrowButton>
-          </motion.div>
-        </div>
-
-        {/* Right column — portrait + floating credential badges */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="relative mx-auto aspect-4/5 w-[70vw] max-w-[320px] sm:w-[42vw] lg:w-[26vw] lg:max-w-90"
+import Reveal from "@/components/ui/Reveal";
+import { BookMarked, ShieldCheck, GraduationCap, Users } from "lucide-react";
+import { doctor, stats } from "@/lib/data";
+import { useBookingModal } from "@/components/ui/BookingModalProvider";
+ 
+export default function Heroo() {
+    const { open: openBooking } = useBookingModal();
+    return (
+        <section
+            id="top"
+            className="container-px relative overflow-hidden bg-mint pb-16 pt-32 md:pt-36"
         >
-          {/* decorative rotated outlines — spin continuously behind the static portrait */}
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-ink/10"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.div
-            className="pointer-events-none absolute inset-0 rounded-[2.5rem] border border-slate-light/40"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-          />
+            <div
+                className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                style={{
+                    backgroundImage:
+                        "repeating-linear-gradient(90deg, rgba(20,24,27,0.05) 0px, rgba(20,24,27,0.05) 1px, transparent 1px, transparent 64px)",
+                }}
+            />
+            <div className="mx-auto grid max-w-6xl items-center gap-8 xl:gap-12 grid-cols-1 lg:grid-cols-[1fr_0.65fr]">
+                <Reveal direction="left" delay={0.1}>
+                    <div className="">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                            className="max-w-2xl font-display text-3xl font-semibold leading-tight text-ink sm:text-6xl"
+                        >
+                            Meet <br />
+                            <span className="bg-linear-to-r from-ink to-slate bg-clip-text text-transparent">Dr. Ashfaq ul Hassan</span>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-4 max-w-152 text-lg leading-relaxed text-ink-soft"
+                        >
+                            An Educator for Speciality Boards like NEET PG, NEET Superspeciality, USMLE, MRCS, PLAB, MBBS , FMGE and Arab Board.
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 16 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                            className="mt-8 flex flex-wrap gap-6"
+                        >
+                            <ArrowButton onClick={openBooking} variant="dark">
+                                Book a Consultation
+                            </ArrowButton>
+                            
+                            <ArrowButton href="#experience" variant="outline">
+                                More About Me
+                            </ ArrowButton>
+                        </motion.div>
+                    </div>
+                </Reveal>
 
-          <div className="card-shadow grain relative h-full w-full overflow-hidden rounded-4xl border border-ink/8 bg-linear-to-b from-slate-tint to-mint-deep">
-            {doctor.image ? (
-              <img
-                src={doctor.image}
-                alt={doctor.name}
-                className="absolute inset-0 h-full w-full origin-[50%_68%] scale-[1.22] object-cover object-top"
-              />
-            ) : (
-              <>
-                <svg viewBox="0 0 200 240" className="absolute inset-0 h-full w-full" fill="none">
-                  <circle cx="100" cy="88" r="42" fill="var(--color-slate-light)" fillOpacity="0.5" />
-                  <path
-                    d="M40 236c0-46 26.9-84 60-84s60 38 60 84"
-                    fill="var(--color-slate)"
-                    fillOpacity="0.55"
-                  />
-                  <circle cx="128" cy="150" r="5" fill="var(--color-slate-darker)" />
-                  <path
-                    d="M128 150v22a10 10 0 0 0 10 10h4"
-                    stroke="var(--color-slate-darker)"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <div className="absolute bottom-4 left-4 right-4 flex items-center gap-1.5 rounded-full bg-cream/90 px-3 py-1.5 text-[10px] font-medium text-ink-soft backdrop-blur">
-                  <Stethoscope size={12} className="shrink-0" />
-                  Portrait coming soon
-                </div>
-              </>
-            )}
-          </div>
+                <Reveal direction="right">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.92, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                        className="card-shadow grain relative mx-auto aspect-4/4.5 max-h-[420px] w-full max-w-md sm:max-h-[480px] lg:max-h-none lg:w-auto lg:max-w-none lg:aspect-4/4.5 border-6 border-white rounded-xl"
+                    >
+                        {/* decorative rotated outlines — spin continuously behind the static portrait */}
+                        <motion.div
+                            className="pointer-events-none absolute inset-0 rounded-xl border border-ink/10"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+                        />
+                        <motion.div
+                            className="pointer-events-none absolute inset-0 rounded-xl border border-slate-light/40"
+                            animate={{ rotate: -360 }}
+                            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                        />
 
-          {floatBadges.map(({ icon: Icon, label, className, delay }) => (
-            <motion.div
-              key={label}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + delay, ease: [0.22, 1, 0.36, 1] }}
-              className={`animate-float-slow absolute z-10 hidden items-center gap-2 rounded-full border border-ink/8 bg-cream/95 px-3.5 py-2 text-xs font-medium text-ink shadow-md backdrop-blur sm:flex ${className}`}
-              style={{ animationDelay: `${delay}s` }}
-            >
-              <Icon size={13} className="text-slate-dark" />
-              <span className="whitespace-nowrap">{label}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
+                        <div className="absolute inset-0 overflow-hidden rounded-lg">
+                            <img
+                                src="/Heroimg.webp"
+                                alt="Dr. Ashfaq ul Hassan speaking at a lecture"
+                                className="h-full w-full object-cover aspect-4/2"
+                            />
+                        </div>
+
+                        {/* top-left: credential badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                            className="animate-float-slow absolute -left-4 top-6 z-10 hidden items-center gap-2 rounded-lg bg-white px-2.5 py-1.5 shadow-lg backdrop-blur sm:-left-6 sm:top-8 lg:-left-8 lg:top-10 sm:flex"
+                        >
+                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-slate-dark text-white">
+                                <GraduationCap size={14} />
+                            </span>
+                            <div>
+                                <p className="text-xs font-semibold text-ink">Professor & Head, SKIMS</p>
+                            </div>
+                        </motion.div>
+
+                        {/* top-right: credential badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
+                            className="animate-float-slow absolute -right-4 -top-6 z-10 hidden items-center gap-2 rounded-lg bg-white px-2 py-2.5 shadow-lg backdrop-blur sm:-right-6 sm:-top-8 lg:-right-8 xl:-right-12 sm:flex"
+                        >
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-dark text-white">
+                                <ShieldCheck size={16} />
+                            </span>
+                            <div>
+                                <p className="text-xs font-semibold text-ink">GMC UK Registered</p>
+                                <p className="text-[10px] font-medium text-ink-faint">Verified credential</p>
+                            </div>
+                        </motion.div>
+
+                        {/* bottom-right: big stat card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
+                            className="animate-float-slow absolute -bottom-6 -right-3 z-10 hidden rounded-lg bg-slate-dark px-3 py-4 text-cream shadow-xl sm:-bottom-8 sm:-right-4 lg:-bottom-10 lg:-right-5 sm:block"
+                        >
+                            <p className="font-display text-3xl font-semibold">40+</p>
+                            <p className="text-sm font-medium text-cream/70 flex items-center gap-1">
+                                <BookMarked size={14} />Books Authored</p>
+                        </motion.div>
+
+                        {/* bottom-left: students reached card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 1.65, ease: [0.22, 1, 0.36, 1] }}
+                            className="animate-float-slow absolute bottom-10 -left-4 z-10 hidden items-center gap-2.5 rounded-lg bg-white px-2 py-2.5 shadow-lg backdrop-blur sm:bottom-12 sm:-left-6 lg:bottom-14 lg:-left-8 sm:flex"
+                        >
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-slate-dark text-cream">
+                                <Users size={16} />
+                            </span>
+                            <div>
+                                <p className="font-display text-sm font-semibold leading-tight text-ink">1.5 Lakh+ Students</p>
+                                <p className="text-[10px] text-ink-faint">Connected across the globe</p>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                </Reveal>
+            </div>
+        </section>
+    );
 }

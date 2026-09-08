@@ -7,8 +7,8 @@ import Reveal from "@/components/ui/Reveal";
 const icons = [Brain, Microscope, NotebookPen, GraduationCap];
 const images = [
   "/images/expertise-anatomy.jpg",
-  "/images/expertise-histology.jpg",
-  "/images/expertise-curriculum.jpg",
+  "/images/Aboutimg.webp",
+  "/images/Expimg3.webp",
   "/images/expertise-mentorship.jpg",
 ];
 
