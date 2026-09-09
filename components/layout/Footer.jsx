@@ -126,14 +126,14 @@ const socials = [
   { icon: Mail, href: `mailto:${doctor.email}`, label: "Email" },
   ...(doctor.location
     ? [
-        {
-          icon: MapPin,
-          href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-            doctor.location
-          )}`,
-          label: "Location",
-        },
-      ]
+      {
+        icon: MapPin,
+        href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          doctor.location
+        )}`,
+        label: "Location",
+      },
+    ]
     : []),
 ];
 

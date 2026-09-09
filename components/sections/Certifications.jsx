@@ -25,7 +25,7 @@ export default function Certifications() {
               <div className="mb-10 flex h-18 w-18 items-center justify-center rounded-full border-[1.5px] border-slate-dark font-display text-sm font-bold tracking-wide text-slate-dark">
                 GMC
               </div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-ink-faint">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-ink-faint">
                 Featured
               </p>
               <p className="mb-3 font-display text-2xl font-semibold leading-tight text-ink sm:text-3xl">

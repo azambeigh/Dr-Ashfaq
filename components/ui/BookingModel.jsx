@@ -82,7 +82,7 @@ export default function BookingModel({ isOpen, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/50 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/50 p-4 backdrop-blur-sm"
           onClick={onClose}
           role="presentation"
         >
@@ -115,7 +115,7 @@ export default function BookingModel({ isOpen, onClose }) {
                     Request sent
                   </h3>
                   <p className="mt-2 max-w-xs text-sm text-ink-faint">
-                    Thanks, {form.name.split(" ")[0] || "there"} — we&apos;ll get back
+                    Thanks, {form.name.split(" ")[0] || "there"} - we&apos;ll get back
                     to you shortly to confirm a time.
                   </p>
                   <button

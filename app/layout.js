@@ -18,9 +18,25 @@ const sansFont = Inter({
 });
 
 export const metadata = {
-  title: "Dr. Ashfaq ul Hassan — Professor & Head, Clinical Anatomy, SKIMS",
+  title: "Dr. Ashfaq ul Hassan | Professor & Head, Clinical Anatomy, SKIMS",
   description:
-    "Dr. Ashfaq ul Hassan, Professor and Head of Clinical Anatomy & Histology at SKIMS — 16+ years of teaching, research and clinical anatomy. Book a consultation.",
+    "Dr. Ashfaq ul Hassan, Professor and Head of Clinical Anatomy & Histology at SKIMS - 16+ years of teaching, research and clinical anatomy. Book a consultation.",
+  authors: [{ name: "Dr. Ashfaq ul Hassan" }],
+  publisher: "Dr. Ashfaq ul Hassan",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://dr-ashfaq.vercel.app/",
+  },
+  keywords: [
+    "Dr. Ashfaq ul Hassan",
+    "Clinical Anatomy SKIMS",
+    "USMLE mentor Kashmir",
+    "NEET PG anatomy",
+    "Professor Clinical Anatomy Srinagar",
+  ],
 };
 
 export default function RootLayout({ children }) {
