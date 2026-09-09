@@ -63,7 +63,7 @@ export default function Heroo() {
                         initial={{ opacity: 0, scale: 0.92, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                        className="card-shadow grain relative mx-auto aspect-4/4.5 max-h-[420px] w-full max-w-md sm:max-h-[480px] lg:max-h-none lg:w-auto lg:max-w-none lg:aspect-4/4.5 border-6 border-white rounded-xl"
+                        className="card-shadow grain relative mx-auto aspect-4/4.5 max-h-105 w-full max-w-md sm:max-h-[480px] lg:max-h-none lg:w-auto lg:max-w-none lg:aspect-4/4.5 border-6 border-white rounded-xl"
                     >
                         {/* decorative rotated outlines — spin continuously behind the static portrait */}
                         <motion.div
