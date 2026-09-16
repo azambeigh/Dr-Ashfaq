@@ -139,7 +139,7 @@ export default function Heroo() {
                                 <Users size={16} />
                             </span>
                             <div>
-                                <p className="font-display text-sm font-semibold leading-tight text-ink">1.5 Lakh+ Students</p>
+                                <p className="font-display text-sm font-semibold leading-tight text-ink">2 Lakh Students & Doctors</p>
                                 <p className="text-[10px] text-ink-faint">Connected across the globe</p>
                             </div>
                         </motion.div>

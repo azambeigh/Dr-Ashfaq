@@ -24,7 +24,7 @@ export default function Expertise() {
             Areas of <span className="text-slate-dark">Expertise</span>
           </h2>
           <p className="max-w-md text-ink-soft leading-relaxed">
-            Focused on the disciplines that connect research, teaching and clinical anatomy.
+            Mentor for NEET PG , FMGE, INICET, NEET SS.USMLE, PLAB, MRCS.
           </p>
         </Reveal>
 

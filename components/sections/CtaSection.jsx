@@ -41,7 +41,8 @@ export default function CtaSection() {
               <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
                 <div className="max-w-xl">
                   <h2 className="relative font-display text-2xl font-semibold leading-[1.05] text-cream sm:text-4xl">
-                    Guidance That Makes a Difference
+                    {/* Guidance That Makes a Difference */}
+                    Why Take my Guidance
                   </h2>
                   <p className="mt-4 leading-relaxed text-cream/90 text-sm sm:text-base">
                     Whether you are seeking medical consultation or academic guidance, get personalised advice backed by experience and expertise.

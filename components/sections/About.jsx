@@ -23,7 +23,7 @@ export default function About() {
         <Reveal direction="left" delay={0.1}>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">About</p>
           <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
-            An <span className="text-slate-dark">Educator</span> At The Heart of Anatomy.
+            An <span className="text-slate-dark">Educator</span> At The Heart of Medical Exams
           </h2>
           <p className="mt-6 leading-relaxed text-ink-soft">
             {doctor.summary}
