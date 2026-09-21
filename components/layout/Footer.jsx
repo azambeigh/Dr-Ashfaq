@@ -199,22 +199,67 @@ export default function Footer() {
           </div>
         </Reveal>
 
-        <div className="relative mx-auto mt-20 sm:mt-16 w-full max-w-6xl pt-5">
+        {/* ECG Pulse Replica Section */}
+        <div className="relative mx-auto mt-20 w-full max-w-6xl pt-5">
+          {/* Grid Background */}
+          <div 
+            className="absolute inset-x-0 top-[-110%] h-full w-full overflow-hidden opacity-[0.12]"
+            style={{
+              backgroundImage: `
+                repeating-linear-gradient(0deg, transparent 0 39px, rgba(238,244,241,.05) 39px 40px), 
+                repeating-linear-gradient(90deg, transparent 0 39px, rgba(238,244,241,.05) 39px 40px)
+              `,
+              backgroundColor: 'transparent'
+            }}
+          />
+          
           <svg
-            className="pointer-events-none absolute inset-x-0 top-[-110%] w-full opacity-[0.12] block"
-            height="80"
-            viewBox="0 0 1000 80"
-            fill="none"
+            className="pointer-events-none absolute inset-x-0 top-[-110%] w-full h-full block"
+            viewBox="0 0 1000 200"
             preserveAspectRatio="none"
           >
+            <defs>
+              <linearGradient id="ecg-grad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#eef4f1" stopOpacity="0"/>
+                <stop offset="80%" stopColor="#eef4f1" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="1"/>
+              </linearGradient>
+            </defs>
+            
+            {/* Ghost trace (persistent, low-opacity) - Taller Waveform */}
             <path
-              d="M0 40 H350 L370 8 L420 72 L430 40 L480 40 L510 12 L540 68 L570 40 H1000"
+              d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
+              fill="none"
               stroke="#eef4f1"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+              opacity="0.14"
+            />
+            
+            {/* Animated draw line - Starts Hidden (offset 2400) then Lights Up */}
+            <path
+              d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
+              fill="none"
+              stroke="url(#ecg-grad)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeDasharray="2400"
+              strokeDashoffset="2400"
+              style={{
+                filter: 'drop-shadow(0 0 4px rgba(238,244,241,.35))',
+                animation: 'pl-07-draw 4s linear infinite'
+              }}
             />
           </svg>
+
+          <style jsx>{`
+            @keyframes pl-07-draw {
+              0% { stroke-dashoffset: 2400; }
+              100% { stroke-dashoffset: 0; }
+            }
+          `}</style>
 
           <p className="pt-4 text-xs text-cream/80">
             Made with care, from Srinagar, Kashmir. (c) {new Date().getFullYear()}{" "}

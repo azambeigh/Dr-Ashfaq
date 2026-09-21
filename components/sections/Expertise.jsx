@@ -1,15 +1,20 @@
 "use client";
 
-import { Brain, Microscope, NotebookPen, GraduationCap, ArrowUpRight } from "lucide-react";
+import { Brain, Microscope, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight, } from "lucide-react";
 import { expertise } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 
-const icons = [Brain, Microscope, NotebookPen, GraduationCap];
+const icons = [Brain, Microscope, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight];
+
 const images = [
   "/images/expertise-anatomy.jpg",
   "/images/Aboutimg.webp",
   "/images/Expimg3.webp",
-  "/images/expertise-mentorship.jpg",
+  "/images/expertise-mentorship.webp",
+  "/images/NEET.webp",
+  "/images/FMGE.jpg",
+  "/images/NEETSS.webp",
+  "/images/PLAB.jpg",
 ];
 
 export default function Expertise() {
@@ -17,8 +22,8 @@ export default function Expertise() {
     <section id="expertise" className="container-px py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
-            Specialties
-          </p>
+          Specialties
+        </p>
         <Reveal className="mb-12 sm:mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
             Areas of <span className="text-slate-dark">Expertise</span>
@@ -46,14 +51,14 @@ export default function Expertise() {
                     </span>
                   </div>
                   <div className="flex flex-col gap-2 bg-slate-dark px-4 py-6">
-                      <h3 className="font-display font-semibold text-cream">{item.title}</h3>
+                    <h3 className="font-display font-semibold text-cream">{item.title}</h3>
                     <div className="flex items-center justify-between gap-3">
                       <p className="mt-1 text-xs leading-relaxed text-cream/65">{item.description}</p>
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cream/12 text-cream transition-transform duration-300 group-hover:rotate-45">
-                      <ArrowUpRight size={14} />
-                    </span>
+                        <ArrowUpRight size={14} />
+                      </span>
                     </div>
-                    
+
                   </div>
                 </div>
               </Reveal>

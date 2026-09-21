@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FileText, BookOpen, ArrowRight, ArrowUpRight } from "lucide-react";
 import { publications, books } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
-import ArrowButton from "@/components/ui/ArrowButton";
 
 const accents = [
   "bg-slate-dark text-cream",
@@ -74,7 +73,9 @@ export default function Publications() {
                     Publication No. {pub.number}
                   </p>
                   <a
-                    href="#publications"
+                    href={pub.link || "#publications"}
+                    target="_blank"
+                    rel="noreferrer"
                     className="group flex items-center gap-1 text-xs font-semibold text-slate-dark hover:text-slate-darker"
                   >
                     Read More
