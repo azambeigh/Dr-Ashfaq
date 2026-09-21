@@ -231,7 +231,7 @@ export default function Footer() {
               d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
               fill="none"
               stroke="#eef4f1"
-              strokeWidth="1.5"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
               opacity="0.14"
@@ -241,7 +241,8 @@ export default function Footer() {
             <path
               d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
               fill="none"
-              stroke="url(#ecg-grad)"
+              // stroke="url(#ecg-grad)"
+              stroke="#eef4f1"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
