@@ -4,6 +4,7 @@ import About from "@/components/sections/About";
 import WhyChoose from "@/components/sections/WhyChoose";
 import Experience from "@/components/sections/Experience";
 import Expertise from "@/components/sections/Expertise";
+import Expert from "@/components/sections/Expert";
 import Publications from "@/components/sections/Publications";
 import Certifications from "@/components/sections/Certifications";
 import Booking from "@/components/sections/CtaSection";
@@ -17,7 +18,7 @@ export default function Home() {
       <About />
       <TrustedBy />
       <WhyChoose />
-      <Expertise />
+      <Expert />
       <Experience />
       <Publications />
       <Certifications />

@@ -73,7 +73,7 @@ export default function Publications() {
                     Publication No. {pub.number}
                   </p>
                   <a
-                    href={pub.link || "#publications"}
+                    href={pub.link}
                     target="_blank"
                     rel="noreferrer"
                     className="group flex items-center gap-1 text-xs font-semibold text-slate-dark hover:text-slate-darker"

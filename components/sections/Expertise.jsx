@@ -1,10 +1,12 @@
 "use client";
 
-import { Brain, Microscope, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight, } from "lucide-react";
+import { Brain, Microscope, LibraryBig, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight, ShieldCheck, Landmark, Plane } from "lucide-react";
 import { expertise } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
 
-const icons = [Brain, Microscope, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight];
+const icons = [
+  Brain, Microscope, LibraryBig, NotebookPen, GraduationCap, BookOpen, Stethoscope, Award, Globe, ArrowUpRight, ShieldCheck, Landmark, Plane, 
+];
 
 const images = [
   "/images/expertise-anatomy.jpg",
@@ -15,6 +17,9 @@ const images = [
   "/images/FMGE.jpg",
   "/images/NEETSS.webp",
   "/images/PLAB.jpg",
+  "/images/MCRS.webp",
+  "/images/ARAB.webp",
+  "/images/PLAB.webp",
 ];
 
 export default function Expertise() {

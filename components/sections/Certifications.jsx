@@ -15,7 +15,7 @@ export default function Certifications() {
             Credentials
           </p>
           <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
-            Certified Across <span className="text-slate-dark">Four</span> Countries.
+            Certified Across <span className="text-slate-dark">Continents.</span>
           </h2>
         </Reveal>
 

@@ -6,22 +6,60 @@ import Reveal from "@/components/ui/Reveal";
 import { BookMarked, ShieldCheck, GraduationCap, Users } from "lucide-react";
 import { doctor, stats } from "@/lib/data";
 import { useBookingModal } from "@/components/ui/BookingModalProvider";
- 
+
 export default function Heroo() {
     const { open: openBooking } = useBookingModal();
     return (
         <section
             id="top"
-            className="container-px relative overflow-hidden bg-mint pb-16 pt-32 md:pt-36"
+            className="container-px relative overflow-visible bg-mint pb-16 pt-32 md:pt-36"
         >
             <div
-                className="pointer-events-none absolute inset-0 opacity-[0.35]"
+                className="pointer-events-none absolute inset-0 opacity-[0.20]"
                 style={{
                     backgroundImage:
                         "repeating-linear-gradient(90deg, rgba(20,24,27,0.05) 0px, rgba(20,24,27,0.05) 1px, transparent 1px, transparent 64px)",
                 }}
             />
-            <div className="mx-auto grid max-w-6xl items-center gap-8 xl:gap-12 grid-cols-1 lg:grid-cols-[1fr_0.65fr]">
+
+            {/* ECG Pulse effect — background layer, hardcoded dark hex (no CSS var dependency) */}
+            <svg
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-18 w-full translate-y-1/2 block"
+                viewBox="0 0 1000 200"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
+                    fill="none"
+                    stroke="#123a5e"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    opacity="0.15"
+                />
+                <path
+                    d="M0 100 L120 100 L140 100 Q160 90 170 100 L190 100 L200 100 L205 70 L210 100 L215 15 L220 185 L225 100 L235 100 L245 100 Q265 90 275 100 L300 100 L420 100 L440 100 Q460 90 470 100 L490 100 L500 100 L505 70 L510 100 L515 15 L520 185 L525 100 L535 100 L545 100 Q565 90 575 100 L600 100 L720 100 L740 100 Q760 90 770 100 L790 100 L800 100 L805 70 L810 100 L815 15 L820 185 L825 100 L835 100 L845 100 Q865 90 875 100 L1000 100"
+                    fill="none"
+                    stroke="#123a5e"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="2400"
+                    strokeDashoffset="2400"
+                    style={{
+                        animation: "hero-ecg-draw 4s linear infinite",
+                    }}
+                />
+            </svg>
+
+            <style jsx>{`
+                @keyframes hero-ecg-draw {
+                    0% { stroke-dashoffset: 2400; }
+                    100% { stroke-dashoffset: 0; }
+                }
+            `}</style>
+
+            <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-8 xl:gap-12 grid-cols-1 lg:grid-cols-[1fr_0.65fr]">
                 <Reveal direction="left" delay={0.1}>
                     <div className="">
                         <motion.h1
@@ -50,7 +88,7 @@ export default function Heroo() {
                             <ArrowButton onClick={openBooking} variant="dark">
                                 Book a Consultation
                             </ArrowButton>
-                            
+
                             <ArrowButton href="#experience" variant="outline">
                                 More About Me
                             </ ArrowButton>

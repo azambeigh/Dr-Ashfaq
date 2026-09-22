@@ -14,7 +14,7 @@ export default function Experience() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="experience" className="bg-mint-flat py-20 sm:py-24">
+    <section id="experience" className="bg-mint py-20 sm:py-24">
       <div className="container-px mx-auto max-w-6xl">
         <Reveal className="mb-12 sm:mb-16 max-w-5xl">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">

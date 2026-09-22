@@ -139,7 +139,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="relative z-0 -mt-28 overflow-hidden border-t border-line bg-slate-dark sm:-mt-36 lg:-mt-44">
+    <footer id="footer" className="relative z-0 -mt-28 overflow-hidden border-t border-line bg-[#0E2E4B] sm:-mt-36 lg:-mt-44">
       <StethoscopeMark className="pointer-events-none absolute -right-20 top-60 h-40 w-40 opacity-[0.12] sm:h-56 sm:w-56" />
 
       <div className="container-px relative pt-44 pb-12 sm:pt-52 lg:pt-60">

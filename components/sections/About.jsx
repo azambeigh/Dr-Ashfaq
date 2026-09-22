@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#e2f0f0] container-px py-20 sm:py-24">
+    <section id="about" className="bg-mint container-px py-20 sm:py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[0.65fr_1fr]">
         <Reveal direction="right">
           <div className="card-shadow grain relative aspect-4/4.5 overflow-hidden rounded-2xl border border-ink/8 bg-slate-tint">
