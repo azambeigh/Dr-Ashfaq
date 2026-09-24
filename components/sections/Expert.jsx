@@ -40,6 +40,10 @@ const orderClasses = [
   "order-5",   // i=11 -> pos 5
 ];
 
+// Visual position (1-indexed, matching orderClasses above) for each array index,
+// used to stagger the reveal animation by screen position rather than array index.
+const visualPosition = [1, 9, 10, 11, 12, 6, 7, 8, 2, 3, 4, 5];
+
 export default function Expertise() {
   return (
     <section id="expertise" className="container-px py-20 sm:py-24">
@@ -59,11 +63,12 @@ export default function Expertise() {
         <div className="grid gap-x-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
           {expertise.map((item, i) => {
             const Icon = icons[i];
+            const delay = (visualPosition[i] - 1) * 0.05;
 
             // first card: image-only tile, no text/icon
             if (i === 0) {
               return (
-                <Reveal key={item.title} delay={i * 0.07} className={orderClasses[i]}>
+                <Reveal key={item.title} delay={delay} className={orderClasses[i]}>
                   <div className="card-shadow relative overflow-hidden rounded-2xl h-90 md:h-93 lg:h-77 ">
                     <img
                       src="/images/ExpertCard.png"
@@ -76,7 +81,7 @@ export default function Expertise() {
             }
 
             return (
-              <Reveal key={item.title} delay={i * 0.07} className={orderClasses[i]}>
+              <Reveal key={item.title} delay={delay} className={orderClasses[i]}>
                 <div className="group card-shadow relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink/8 bg-cream">
                   <div className="relative aspect-video overflow-hidden">
                     <img
