@@ -15,7 +15,7 @@ const images = [
   "/images/NEET.webp",
   "/images/expertise-mentorship.webp",
   "/images/NEETPG.webp",
-  "/images/FMGE.Webp",
+  "/images/FMGE.webp",
   "/images/NEETSS.webp",
   "/images/USMLE.png",
   "/images/MCRS.webp",

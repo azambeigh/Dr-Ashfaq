@@ -26,7 +26,7 @@ export default function CtaSection() {
     <div id="cta" className="container-px relative z-10 pt-12">
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
-          <div className="grain relative z-10 overflow-hidden border border-cream/30  rounded-3xl bg-slate-dark px-6 py-6 sm:py-12 shadow-[0_35px_70px_-25px_rgba(20,24,27,0.25)] sm:px-10 lg:px-14 lg:py-16">
+          <div className="grain relative z-10 overflow-hidden border border-cream/30  rounded-3xl bg-[#0E2E4B] px-6 py-6 sm:py-12 shadow-[0_35px_70px_-25px_rgba(20,24,27,0.25)] sm:px-10 lg:px-14 lg:py-16">
             {/* glow - bottom-left, site palette */}
             <div
               className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full blur-[80px]"

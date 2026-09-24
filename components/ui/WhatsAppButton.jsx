@@ -35,7 +35,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className={`group fixed right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-transparent shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
+      className={`group fixed right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-mint shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
         scrollBtnVisible ? "bottom-20" : "bottom-6"
       }`}
     >
