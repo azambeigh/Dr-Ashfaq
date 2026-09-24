@@ -28,7 +28,7 @@ export default function Publications() {
         <Reveal >
           <div className="mb-12 sm:mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">
                 Selected Publications
               </p>
               <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
@@ -94,7 +94,7 @@ export default function Publications() {
         <Reveal delay={0.1}>
           <div className="mb-12 sm:mb-16 mt-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">
                 Featured Books
               </p>
               <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
@@ -104,6 +104,7 @@ export default function Publications() {
             <a
               href="https://www.amazon.in/s?me=A1O5F7XR1CIVU8"
               className="flex shrink-0 items-center gap-1.5 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+              target="_blank"
             >
               View All Books
               <ArrowRight size={14} />

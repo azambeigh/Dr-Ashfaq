@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import ScrolltoTop from "@/components/ui/ScrolltoTop";
 import { BookingModalProvider } from "@/components/ui/BookingModalProvider";
+import WhatsAppButton from "@/components/ui/WhatsAppButton";
 
 const displayFont = Bricolage_Grotesque({
   variable: "--font-display",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             {children}
             <Footer />
+            <WhatsAppButton />
             <ScrolltoTop />
           </SmoothScroll>
         </BookingModalProvider>

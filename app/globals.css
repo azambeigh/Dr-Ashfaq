@@ -111,6 +111,10 @@ body {
   background: var(--color-accent);
 }
 
+@theme {
+  --breakpoint-xs: 448px;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

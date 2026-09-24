@@ -1,5 +1,6 @@
 import { certifications } from "@/lib/data";
 import Reveal from "@/components/ui/Reveal";
+import WorldMapBackground from "@/components/ui/WorldMapBackground";
 
 const FEATURED_LABEL = "GMC UK";
 
@@ -8,14 +9,18 @@ export default function Certifications() {
   const rest = certifications.filter((cert) => cert.label !== FEATURED_LABEL);
 
   return (
-    <section id="Credentials" className="container-px py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="Credentials" className="relative container-px py-20 sm:py-24 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <WorldMapBackground className="absolute inset-0" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <Reveal className="mb-12">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">
             Credentials
           </p>
           <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
-            Certified Across <span className="text-slate-dark">Continents.</span>
+            Certified Across <span className="text-slate-dark">Continents</span>
           </h2>
         </Reveal>
 

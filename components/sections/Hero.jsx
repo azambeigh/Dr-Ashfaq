@@ -7,6 +7,92 @@ import { BookMarked, ShieldCheck, GraduationCap, Users } from "lucide-react";
 import { doctor, stats } from "@/lib/data";
 import { useBookingModal } from "@/components/ui/BookingModalProvider";
 
+function StethoscopeMark(props) {
+    return (
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <defs>
+                <linearGradient id="heroStethoTube" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stopColor="var(--color-slate-dark)" stopOpacity="0.9" />
+                    <stop offset="1" stopColor="var(--color-slate-dark)" stopOpacity="0.5" />
+                </linearGradient>
+                <radialGradient id="heroStethoChest" cx="0.35" cy="0.3" r="0.8">
+                    <stop offset="0" stopColor="var(--color-slate-dark)" stopOpacity="0.85" />
+                    <stop offset="1" stopColor="var(--color-slate-dark)" stopOpacity="0.35" />
+                </radialGradient>
+            </defs>
+
+            <path
+                d="M55 18c-6 0-11 5-11 11v20c0 22 16 40 38 42"
+                fill="none"
+                stroke="url(#heroStethoTube)"
+                strokeWidth="5"
+                strokeLinecap="round"
+            />
+            <path
+                d="M95 18c6 0 11 5 11 11v20c0 22-16 40-38 42"
+                fill="none"
+                stroke="url(#heroStethoTube)"
+                strokeWidth="5"
+                strokeLinecap="round"
+            />
+            <circle cx="55" cy="16" r="7" fill="url(#heroStethoTube)" />
+            <circle cx="95" cy="16" r="7" fill="url(#heroStethoTube)" />
+
+            <path
+                d="M75 91c0 24 6 38 6 58 0 26 -18 46 -46 46"
+                fill="none"
+                stroke="url(#heroStethoTube)"
+                strokeWidth="6"
+                strokeLinecap="round"
+            />
+
+            <path
+                d="M35 195c-14 4-22 16-19 30 3 15 18 25 33 22 15-3 25-18 22-33-2-11-10-19-20-21"
+                fill="none"
+                stroke="url(#heroStethoTube)"
+                strokeWidth="3.5"
+            />
+
+            <circle
+                cx="35"
+                cy="218"
+                r="34"
+                fill="url(#heroStethoChest)"
+                stroke="var(--color-slate-dark)"
+                strokeOpacity="0.6"
+                strokeWidth="2"
+            />
+            <circle
+                cx="35"
+                cy="218"
+                r="22"
+                fill="none"
+                stroke="var(--color-slate-dark)"
+                strokeWidth="2"
+                strokeOpacity="0.4"
+            />
+            <circle
+                cx="35"
+                cy="218"
+                r="10"
+                fill="none"
+                stroke="var(--color-slate-dark)"
+                strokeWidth="1.5"
+                strokeOpacity="0.3"
+            />
+
+            <path
+                d="M140 60c30 10 55 40 55 75s-25 65-55 75"
+                fill="none"
+                stroke="var(--color-slate-dark)"
+                strokeOpacity="0.15"
+                strokeWidth="1.5"
+                strokeDasharray="2 4"
+            />
+        </svg>
+    );
+}
+
 export default function Heroo() {
     const { open: openBooking } = useBookingModal();
     return (
@@ -70,6 +156,7 @@ export default function Heroo() {
                         >
                             Meet <br />
                             <span className="bg-linear-to-r from-ink to-slate bg-clip-text text-transparent">Dr. Ashfaq ul Hassan</span>
+                            <StethoscopeMark className="ml-2 inline-block h-[1em] w-[1em] align-middle" />
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}

@@ -8,7 +8,7 @@ export default function WhyChoose() {
   return (
     <section id="impact" className="container-px bg-mint py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">Experience & Impact</p>
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">Experience & Impact</p>
         <Reveal className="mb-12 sm:mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
             Why <span className="text-slate-dark">Work </span> With Me

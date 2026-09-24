@@ -21,7 +21,7 @@ export default function About() {
         </Reveal>
 
         <Reveal direction="left" delay={0.1}>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">About</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">About</p>
           <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
             An <span className="text-slate-dark">Educator</span> At The Heart of Medical Exams
           </h2>

@@ -10,42 +10,41 @@ const icons = [
 
 const images = [
   "/images/expertise-anatomy.jpg",
-  "/images/Aboutimg.webp",
+  "/images/Excel.jpg",
   "/images/Expimg3.webp",
   "/images/NEET.webp",
   "/images/expertise-mentorship.webp",
-  "/images/neet.jpg",
-  "/images/FMGE.jpg",
+  "/images/NEETPG.webp",
+  "/images/FMGE.Webp",
   "/images/NEETSS.webp",
-  "/images/PLAB.jpg",
+  "/images/USMLE.png",
   "/images/MCRS.webp",
-  "/images/ARAB.webp",
+  "/images/ARABB.webp",
   "/images/PLAB.webp",
 ];
 
-// Reorders the first tile ("Expertise in These Exams") into row 2 of the grid,
-// without touching the icon/image index mapping. Values are per-index literal
-// Tailwind classes (not template-interpolated) so JIT can pick them up.
+// Base `order-*` (no breakpoint prefix) applies at ALL screen sizes,
+// so the visual order stays identical on mobile, sm, and lg.
 const orderClasses = [
-  "sm:order-3 lg:order-5",   // i=0 — the solid title tile, pushed to row 2
-  "sm:order-1 lg:order-1",
-  "sm:order-2 lg:order-2",
-  "sm:order-4 lg:order-3",
-  "sm:order-5 lg:order-4",
-  "sm:order-6 lg:order-6",
-  "sm:order-7 lg:order-7",
-  "sm:order-8 lg:order-8",
-  "sm:order-9 lg:order-9",
-  "sm:order-10 lg:order-10",
-  "sm:order-11 lg:order-11",
-  "sm:order-12 lg:order-12",
+  "order-1",   // i=0  -> pos 1
+  "order-9",   // i=1  -> pos 9
+  "order-10",  // i=2  -> pos 10
+  "order-11",  // i=3  -> pos 11
+  "order-12",  // i=4  -> pos 12
+  "order-6",   // i=5  -> pos 6
+  "order-7",   // i=6  -> pos 7
+  "order-8",   // i=7  -> pos 8
+  "order-2",   // i=8  -> pos 2
+  "order-3",   // i=9  -> pos 3
+  "order-4",   // i=10 -> pos 4
+  "order-5",   // i=11 -> pos 5
 ];
 
 export default function Expertise() {
   return (
     <section id="expertise" className="container-px py-20 sm:py-24">
       <div className="mx-auto max-w-6xl">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">
           Specialties
         </p>
         <Reveal className="mb-12 sm:mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -61,18 +60,16 @@ export default function Expertise() {
           {expertise.map((item, i) => {
             const Icon = icons[i];
 
-            // first card: solid title-only tile, text stacked in 3 lines, site colors
+            // first card: image-only tile, no text/icon
             if (i === 0) {
               return (
                 <Reveal key={item.title} delay={i * 0.07} className={orderClasses[i]}>
-                  <div className="card-shadow flex h-full flex-col rounded-2xl bg-slate-dark px-6 py-8">
-                    <h3 className="font-display text-3xl sm:text-[38px] font-semibold leading-tight text-cream">
-                      Expertise
-                      <br />
-                      in These
-                      <br />
-                      Exams
-                    </h3>
+                  <div className="card-shadow relative overflow-hidden rounded-2xl h-90 md:h-93 lg:h-77 ">
+                    <img
+                      src="/images/ExpertCard.png"
+                      alt="Expertise in these exams"
+                      className="h-full w-full object-cover xs:object-fill lg:object-cover object-top "
+                    />
                   </div>
                 </Reveal>
               );
@@ -85,7 +82,7 @@ export default function Expertise() {
                     <img
                       src={images[i]}
                       alt={item.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-linear-to-t from-slate-darker/50 via-slate-darker/0 to-transparent" />
                   </div>

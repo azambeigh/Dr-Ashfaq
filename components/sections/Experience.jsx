@@ -17,11 +17,11 @@ export default function Experience() {
     <section id="experience" className="bg-mint py-20 sm:py-24">
       <div className="container-px mx-auto max-w-6xl">
         <Reveal className="mb-12 sm:mb-16 max-w-5xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ink-faint">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-dark/80">
             Career Path
           </p>
           <h2 className="font-display text-3xl font-semibold leading-tight text-ink sm:text-[40px]">
-            <span className="text-slate-dark">16 years</span> of Clinical Training, Leadership and Teaching.
+            <span className="text-slate-dark">16 years</span> of Clinical Training, Leadership and Teaching
           </h2>
         </Reveal>
 
