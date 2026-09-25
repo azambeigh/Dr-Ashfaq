@@ -10,21 +10,19 @@ const icons = [
 
 const images = [
   "/images/expertise-anatomy.jpg",
-  "/images/Excel.jpg",
+  "/images/Excel.webp",
   "/images/Expimg3.webp",
   "/images/NEET.webp",
   "/images/expertise-mentorship.webp",
   "/images/NEETPG.webp",
   "/images/FMGE.webp",
   "/images/NEETSS.webp",
-  "/images/USMLE.png",
+  "/images/USMLE.webp",
   "/images/MCRS.webp",
   "/images/ARABB.webp",
   "/images/PLAB.webp",
 ];
 
-// Base `order-*` (no breakpoint prefix) applies at ALL screen sizes,
-// so the visual order stays identical on mobile, sm, and lg.
 const orderClasses = [
   "order-1",   // i=0  -> pos 1
   "order-9",   // i=1  -> pos 9
@@ -40,8 +38,6 @@ const orderClasses = [
   "order-5",   // i=11 -> pos 5
 ];
 
-// Visual position (1-indexed, matching orderClasses above) for each array index,
-// used to stagger the reveal animation by screen position rather than array index.
 const visualPosition = [1, 9, 10, 11, 12, 6, 7, 8, 2, 3, 4, 5];
 
 export default function Expertise() {
@@ -71,7 +67,7 @@ export default function Expertise() {
                 <Reveal key={item.title} delay={delay} className={orderClasses[i]}>
                   <div className="card-shadow relative overflow-hidden rounded-2xl h-90 md:h-93 lg:h-77 ">
                     <img
-                      src="/images/ExpertCard.png"
+                      src="/images/ExpertCard.webp"
                       alt="Expertise in these exams"
                       className="h-full w-full object-cover xs:object-fill lg:object-cover object-top "
                     />
