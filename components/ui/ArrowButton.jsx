@@ -10,9 +10,6 @@ const variants = {
   ghost: "bg-white/10 text-cream border border-cream/25 hover:bg-white/20",
 };
 
-// background for the little arrow circle — needs to contrast against
-// each button's own background, so "light" gets a dark-tinted circle
-// instead of the default white-tinted one used on dark buttons.
 const arrowBg = {
   dark: "bg-white/15",
   light: "bg-ink/10",
@@ -28,6 +25,7 @@ export default function ArrowButton({
   variant = "dark",
   className,
   iconOnly = false,
+  ...rest
 }) {
   const Component = href ? "a" : "button";
 
@@ -42,6 +40,7 @@ export default function ArrowButton({
         iconOnly && "p-3",
         className
       )}
+      {...rest}
     >
       {!iconOnly && children}
       <span

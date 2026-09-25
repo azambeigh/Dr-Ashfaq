@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import ArrowButton from "@/components/ui/ArrowButton";
 import Reveal from "@/components/ui/Reveal";
@@ -203,10 +204,13 @@ export default function Heroo() {
                         />
 
                         <div className="absolute inset-0 overflow-hidden rounded-lg">
-                            <img
+                            <Image
                                 src="/Heroimg.webp"
                                 alt="Dr. Ashfaq ul Hassan speaking at a lecture"
-                                className="h-full w-full object-cover aspect-4/2"
+                                fill
+                                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 60vw, 450px"
+                                className="object-cover aspect-4/2"
+                                priority
                             />
                         </div>
 

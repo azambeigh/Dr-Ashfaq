@@ -7,13 +7,14 @@ import { Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { navLinks, doctor } from "@/lib/data";
 import ArrowButton from "@/components/ui/ArrowButton";
-import { useBookingModal } from "@/components/ui/BookingModalProvider";
+
+const WHATSAPP_NUMBER = "919419040082";
+const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
-  const { open: openBooking } = useBookingModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -23,8 +24,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    // "top" (hero) and "footer" both clear the active link when entered,
-    // since neither corresponds to a nav item.
+
     const sectionIds = [
       "top",
       ...navLinks.map((link) => link.href.replace("#", "")),
@@ -100,7 +100,7 @@ export default function Navbar() {
 
           <div className="flex items-center justify-self-end gap-2">
             <div className="hidden md:block">
-              <ArrowButton onClick={openBooking} variant="dark">
+              <ArrowButton href={WHATSAPP_HREF} target="_blank" rel="noreferrer" variant="dark">
                 Get in Touch
               </ArrowButton>
             </div>
@@ -157,10 +157,10 @@ export default function Navbar() {
               </div>
               <div className="mt-6">
                 <ArrowButton
-                  onClick={() => {
-                    setOpen(false);
-                    openBooking();
-                  }}
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setOpen(false)}
                   variant="dark"
                   className="w-full justify-between"
                 >
