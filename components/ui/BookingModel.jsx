@@ -55,7 +55,7 @@ export default function BookingModel({ isOpen, onClose }) {
 
   setStatus("submitting");
   try {
-    const res = await fetch("https://formspree.io/f/xjyvrpqv", {
+    const res = await fetch("https://formspree.io/f/myezplnz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

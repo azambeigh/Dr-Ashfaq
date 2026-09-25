@@ -72,25 +72,36 @@ export default function Publications() {
                   <p className="text-xs font-medium text-ink-faint">
                     Publication No. {pub.number}
                   </p>
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex items-center gap-1 text-xs font-semibold text-slate-dark hover:text-slate-darker"
-                  >
-                    Read More
-                    <ArrowRight
-                      size={12}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </a>
+                  {pub.link ? (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noreferrer nofollow"
+                      aria-label={`Read more about ${pub.title}`}
+                      className="group flex items-center gap-1 text-xs font-semibold text-slate-dark hover:text-slate-darker"
+                    >
+                      Read More
+                      <ArrowRight
+                        size={12}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
+                    </a>
+                  ) : (
+                    <span className="group flex cursor-default items-center gap-1 text-xs font-semibold text-slate-dark hover:text-slate-darker">
+                      Read More
+                      <ArrowRight
+                        size={12}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
+                    </span>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </Reveal>
 
-        {/* Books — cover image, each card links out to its Amazon listing */}
+        {/* Books - cover image, each card links out to its Amazon listing */}
         <Reveal delay={0.1}>
           <div className="mb-12 sm:mb-16 mt-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -105,6 +116,7 @@ export default function Publications() {
               href="https://www.amazon.in/s?me=A1O5F7XR1CIVU8"
               className="flex shrink-0 items-center gap-1.5 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
               target="_blank"
+              rel="noreferrer nofollow"
             >
               View All Books
               <ArrowRight size={14} />
@@ -117,7 +129,7 @@ export default function Publications() {
                 key={book.title}
                 href={amazonHref(book)}
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer nofollow"
                 aria-label={`View ${book.title} on Amazon`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +146,7 @@ export default function Publications() {
                     <>
                       <Image
                         src={book.cover}
-                        alt={book.title}
+                        alt={`${book.title} by Dr. Ashfaq ul Hassan - book cover`}
                         fill
                         sizes="(max-width: 640px) 45vw, (max-width: 1024px) 20vw, 200px"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
